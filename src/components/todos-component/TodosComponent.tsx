@@ -6,7 +6,7 @@ import {getTodos} from "../../services/api.service.ts";
 const TodosComponent = () => {
     const [todos, setTodos] = useState<ITodoModel[]>([])
     useEffect(() => {
-        const fetchTodos = async () => {
+        const fetchTodos = async (): Promise<void> => {
             const todos = await getTodos();
             setTodos(todos);
         }
