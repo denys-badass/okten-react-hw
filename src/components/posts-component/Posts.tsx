@@ -11,13 +11,11 @@ const Posts:FC<UserIdPropType> = ({userId}) => {
     const [posts, setPosts] = useState<IPost[]>([]);
 
     useEffect(() => {
-        setPosts([]);
-        console.log(`Fetching posts for user ${userId}`);
         getPostsByUserId(userId).then(data => setPosts(data))
     }, [userId]);
 
     return (
-        <div>
+        <div className='flex flex-col gap-4 p-5'>
             {
                 posts.map(post => <Post key={post.id} post={post}/>)
             }
