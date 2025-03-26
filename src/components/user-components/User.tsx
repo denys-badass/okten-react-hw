@@ -1,11 +1,12 @@
 import {FC, useState} from 'react';
 import {IUser} from "../../models/IUser.ts";
+import Posts from "../posts-component/Posts.tsx";
 
 type UserPropType = {
     user: IUser;
 }
 
-const User: FC<UserPropType> = ({user: {name}}) => {
+const User: FC<UserPropType> = ({user: {name, id}}) => {
     const [collapsed, setCollapsed] = useState<boolean>(true)
 
     return (
@@ -19,10 +20,10 @@ const User: FC<UserPropType> = ({user: {name}}) => {
                     collapsed ? 'bx-plus' : 'bx-minus'
                 }`}></i>
             </button>
-            <div className={`w-full grid ${
+            <div className={`w-full grid overflow-hidden ${
                 collapsed ? 'grid-rows-[0] opacity-0' : 'grid-rows-[1fr] opacity-100'
             }`}>
-                {/*<Posts />*/}
+                <Posts userId={id}/>
             </div>
         </div>
     );

@@ -9,5 +9,6 @@ export const getUsers = async (): Promise<IUser[]> => {
 }
 
 export const getPostsByUserId = async (userId: number): Promise<IPost[]> => {
+    console.log(`API request for user ${userId}`);
     return await fetch(postsUrl + `?userId=${userId}`).then(response => response.json());
 }
