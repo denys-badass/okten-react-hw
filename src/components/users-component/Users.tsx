@@ -11,7 +11,7 @@ const Users = () => {
     }, []);
 
     return (
-        <div>
+        <div className='w-3/5 mx-auto py-6 grid grid-cols-[1fr] gap-2 text-gray-800'>
             {
                 users.map(user => <User key={user.id} user={user}/>)
             }
