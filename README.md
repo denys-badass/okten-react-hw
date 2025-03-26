@@ -58,7 +58,7 @@ export default tseslint.config({
 })
 ```
 
-#x7sQQ3cJ3
+#98uhQGhaN
 
-https://jsonplaceholder.typicode.com/posts – тут масив даних. Ознайомтесь з ним для початку. Створити необхідні моделі
+https://jsonplaceholder.typicode.com/comments – тут масив даних.Ознайомтесь з ним для початку. Створити необхідні моделі
 та компоненти та вивести всю інформацію за анаглогією з попереднім завданням. Додати мінімальну стилізацію
