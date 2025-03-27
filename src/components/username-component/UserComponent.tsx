@@ -14,7 +14,7 @@ const UserComponent: FC<UserPropType> = ({user}) => {
             collapsed ? 'bg-gray-400' : 'bg-gray-300'
         }`}>
             <button className='p-3 text-2xl flex justify-between w-full' onClick={() => setCollapsed(!collapsed)}>
-                <span>{user.name} - ToDo`s</span>
+                <span>{`${user.firstName} ${user.lastName}`} - ToDo`s</span>
                 <i className={`bx bxs-chevron-down bx-xl transition transform duration-300 ${
                     !collapsed ? 'bx-rotate-180' : ''
                 }`}></i>

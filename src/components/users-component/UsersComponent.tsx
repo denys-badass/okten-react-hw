@@ -6,16 +6,16 @@ import UserComponent from "../username-component/UserComponent.tsx";
 
 
 const UsersComponent = () => {
-    const [users, setUsers] = useState<IUserModel[]>([]);
+    const [usersArr, setUsersArr] = useState<IUserModel[]>([]);
 
     useEffect(() => {
-        getUsers().then(data => setUsers(data))
-    }, [users]);
+        getUsers().then((data) => setUsersArr(data.users))
+    }, [usersArr]);
 
     return (
         <div className='w-3/6 mx-auto flex flex-col gap-3'>
             {
-                users.map((user, index) => <UserComponent key={index} user={user} />)
+                usersArr.map((user, index) => <UserComponent key={index} user={user} />)
             }
         </div>
     );

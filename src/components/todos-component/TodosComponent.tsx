@@ -11,7 +11,7 @@ const TodosComponent: FC<UrlPropType> = ({userId}) => {
     const [todos, setTodos] = useState<ITodoModel[]>([])
 
     useEffect(() => {
-        getTodosByUser(userId).then(todos => setTodos(todos));
+        getTodosByUser(userId).then(data => setTodos(data.todos));
     }, [userId])
 
     return (
