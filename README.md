@@ -52,3 +52,13 @@ export default tseslint.config({
   },
 })
 ```
+
+#hQj9gOH
+
+**Те саме що і попередні завдання, але данні отримати з апі – https://dummyjson.com/porducts
+
+
+```js
+// .env
+VITE_API_BASE_URL='https://dummyjson.com'
+```
