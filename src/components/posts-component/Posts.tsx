@@ -11,7 +11,7 @@ const Posts:FC<UserIdPropType> = ({userId}) => {
     const [posts, setPosts] = useState<IPost[]>([]);
 
     useEffect(() => {
-        getPostsByUserId(userId).then(data => setPosts(data))
+        getPostsByUserId(userId).then(data => setPosts(data.posts))
     }, [userId]);
 
     return (

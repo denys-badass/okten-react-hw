@@ -11,7 +11,7 @@ const Comments: FC<PostIdProp> = ({postId}) => {
     const [comments, setComments] = useState<IComment[]>([]);
 
     useEffect(() => {
-        getCommentsByPostId(postId).then(data => setComments(data));
+        getCommentsByPostId(postId).then(data => setComments(data.comments));
     }, [postId]);
 
     return (

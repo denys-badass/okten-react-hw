@@ -6,7 +6,7 @@ type UserPropType = {
     user: IUser;
 }
 
-const User: FC<UserPropType> = ({user: {name, id}}) => {
+const User: FC<UserPropType> = ({user: {firstName, lastName, id}}) => {
     const [collapsed, setCollapsed] = useState<boolean>(true)
 
     return (
@@ -15,7 +15,7 @@ const User: FC<UserPropType> = ({user: {name, id}}) => {
         }`}>
             <button className={`w-full flex justify-between`}
                     onClick={() => setCollapsed(!collapsed)}>
-                <span>{name} posts</span>
+                <span>{`${firstName} ${lastName}`} posts</span>
                 <i className={`bx bx-sm  ${
                     collapsed ? 'bx-plus' : 'bx-minus'
                 }`}></i>
