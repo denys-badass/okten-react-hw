@@ -9,7 +9,7 @@ const UsersComponent = () => {
     const [usersArr, setUsersArr] = useState<IUserModel[]>([]);
 
     useEffect(() => {
-        getUsers().then((data) => setUsersArr(data.users))
+        getUsers().then(({users}) => setUsersArr(users))
     }, [usersArr]);
 
     return (

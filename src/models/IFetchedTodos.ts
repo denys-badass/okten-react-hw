@@ -1,8 +1,6 @@
 import {ITodoModel} from "./ITodoModel.ts";
+import {IFetched} from "./IFetched.ts";
 
-export interface IFetchedTodos {
+export interface IFetchedTodos extends IFetched {
     todos: ITodoModel[];
-    total: number;
-    skip: number;
-    limit: number;
 }
