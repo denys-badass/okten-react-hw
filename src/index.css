@@ -4,4 +4,7 @@
 body {
     font-family: "Montserrat", sans-serif;
     padding: 40px 0;
+    background: #8e9eab;
+    background: -webkit-linear-gradient(to right, #eef2f3, #97a4af);
+    background: linear-gradient(to right, #eef2f3, #8e9eab);
 }

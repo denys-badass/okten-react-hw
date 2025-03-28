@@ -7,16 +7,34 @@ export type ProductProp = {
 }
 
 const Product: FC<ProductProp> = ({product, isExpanded}) => {
-
+    const {price, stock, thumbnail, title, discountPercentage, brand} = product
+    const totalPrice = price - (discountPercentage / 100 * price)
+    const isAvaliable = stock > 0;
     return (
-        <div className={`border-2 border-slate-600 rounded-lg p-3`}>
-            <img src={product.thumbnail} alt={product.title} loading="lazy" />
-            <span>{product.discountPercentage}</span>
-            <h3>{product.title}</h3>
-            <p>by {product.brand}</p>
-            <p>{product.price}</p>
-            <p>Stock: {product.stock}</p>
-            <button className='cursor-pointer' onClick={() => isExpanded(product)}>Details</button>
+        <div
+            className={`bg-blue-50/90 border-1 border-slate-400 rounded-lg p-3 relative flex flex-col justify-between
+            hover:shadow-md shadow-slate-600/80 transition duration-300 ${!isAvaliable && 'grayscale'}`}>
+            <div>
+                <img src={thumbnail} alt={title} loading="lazy"/>
+                <span
+                    className='absolute right-2 top-2 bg-red-500 text-slate-100 rounded-[8px] w-1/4 h-1/12 flex justify-center items-center'>
+                    -{discountPercentage}%
+                </span>
+                <h3 className='text-2xl'>{title}</h3>
+                {brand && <p className='italic'>by {brand}</p>}
+            </div>
+            <div className='flex flex-col items-center'>
+                <p className='self-end text-gray-600 line-through text-[14px]'>${price}</p>
+                <p className='self-end text-[20px]'>${Math.round(totalPrice * 100) / 100}</p>
+                <p className='flex justify-center items-center'>In Stock: <i className={`bx text-[24px] bxs-${
+                    isAvaliable ? 'check-circle text-emerald-400' : 'x-circle text-red-500'
+                }`}></i></p>
+                <button
+                    className='cursor-pointer justify-self-end w-3/4 p-2 mt-2 bg-emerald-400 rounded-lg'
+                    onClick={() => isExpanded(product)}>Details
+                </button>
+            </div>
+
         </div>
     );
 };
