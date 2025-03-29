@@ -25,6 +25,7 @@ export interface IProduct {
   description: string;
   category: string;
   price: number;
+  totalPrice?: number;
   discountPercentage: number;
   rating: number;
   stock: number;
