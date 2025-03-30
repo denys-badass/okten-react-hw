@@ -1,10 +1,10 @@
-interface Dimensions {
+export interface IDimensions {
   width: number;
   height: number;
   depth: number;
 }
 
-interface Reviews {
+export interface IReviews {
   rating: number;
   comment: string;
   date: string;
@@ -33,11 +33,11 @@ export interface IProduct {
   brand: string;
   sku: string;
   weight: number;
-  dimensions: Dimensions;
+  dimensions: IDimensions;
   warrantyInformation: string;
   shippingInformation: string;
   availabilityStatus: string;
-  reviews: Reviews[];
+  reviews: IReviews[];
   returnPolicy: string;
   minimumOrderQuantity: number;
   meta: Meta;

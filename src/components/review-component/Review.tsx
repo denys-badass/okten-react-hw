@@ -1,7 +1,7 @@
 import {FC} from 'react';
 import {IReview} from "../../models/IReview.ts";
 import Stars from "../stars-component/Stars.tsx";
-import Avatar from "../Avatar.tsx";
+import Avatar from "../avatar-component/Avatar.tsx";
 
 type ReviewProp = {
     review: IReview;

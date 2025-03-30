@@ -1,10 +1,10 @@
 import {FC} from 'react';
-import {IReview} from "../../models/IReview.ts";
 import Review from "../review-component/Review.tsx";
 import './Reviews.css'
+import {IReviews} from "../../models/IProduct.ts";
 
 type ReviewsProp = {
-    reviews: IReview[];
+    reviews: IReviews[];
 }
 
 const Reviews: FC<ReviewsProp> = ({reviews}) => {
