@@ -1,4 +1,4 @@
-import {FC} from 'react';
+import {FC, useState} from 'react';
 import {IProduct} from "../../models/IProduct.ts";
 
 type ProductDetailProp = {
@@ -7,6 +7,8 @@ type ProductDetailProp = {
 }
 
 const ProductDetail: FC<ProductDetailProp> = ({product, onClose}) => {
+    const [reviewCollapsed, setReviewCollapsed] = useState<boolean>(true);
+
     if (!product) return null;
     if (product.stock <= 0) onClose();
 
@@ -64,8 +66,18 @@ const ProductDetail: FC<ProductDetailProp> = ({product, onClose}) => {
                     <img src={product.meta.qrCode} alt='QR Code' className='w-1/3'/>
                 </div>
             </div>
-
-
+            <button
+                className={`w-full grid grid-cols-3 mt-5 text-lg border-1 border-b-gray-500 rounded-lg p-2`}
+                onClick={() => setReviewCollapsed(!reviewCollapsed)}>
+                <span>Reviews</span>
+                <div>Stars</div>
+                <i className={`bx justify-self-end text-2xl self-center mr-5 bx-chevron-${ reviewCollapsed ? 'right' : 'down'}`}></i>
+            </button>
+            <div className={`grid overflow-hidden transition duration-300 ${ 
+                reviewCollapsed ? 'grid-rows-[0] opacity-0' : 'grid-rows-[1fr] opacity-100'
+            }`}>
+                {/*<Reviews reviews={product.reviews}/>*/}
+            </div>
         </div>
     );
 };
