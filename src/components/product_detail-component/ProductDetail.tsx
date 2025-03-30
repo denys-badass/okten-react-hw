@@ -1,5 +1,7 @@
-import {FC, useState} from 'react';
+import {FC} from 'react';
 import {IProduct} from "../../models/IProduct.ts";
+import Reviews from "../reviews-component/Reviews.tsx";
+import Stars from "../stars-component/Stars.tsx";
 
 type ProductDetailProp = {
     product: IProduct | null;
@@ -7,13 +9,11 @@ type ProductDetailProp = {
 }
 
 const ProductDetail: FC<ProductDetailProp> = ({product, onClose}) => {
-    const [reviewCollapsed, setReviewCollapsed] = useState<boolean>(true);
-
     if (!product) return null;
     if (product.stock <= 0) onClose();
 
     return (
-        <div className={`w-[80vw] bg-blue-50/97 fixed top-1/17 left-1/10 text-gray-700 rounded-3xl pl-14 py-6 pr-6`}>
+        <div className={`w-[80vw] bg-blue-50/97 fixed top-1/17 left-1/10 text-gray-700 rounded-3xl pl-14 py-6 pr-6 max-h-[90%] overflow-y-auto scrollbar-hide scroll-smooth`}>
             <img src={product.thumbnail} alt={product.title} className='w-1/4 float-left my-8 mr-8'/>
             <div className='flex'>
                 <h2 className='text-4xl'>{product.title}</h2>
@@ -21,7 +21,7 @@ const ProductDetail: FC<ProductDetailProp> = ({product, onClose}) => {
             </div>
             <ul className='flex text-sm text-gray-400'>
                 {
-                    product.tags.map((tag) => <li>#{tag}</li>)
+                    product.tags.map((tag, index) => <li key={index}>#{tag}</li>)
                 }
             </ul>
             <div className='text-lg mt-3.5'>{product.description}</div>
@@ -66,17 +66,15 @@ const ProductDetail: FC<ProductDetailProp> = ({product, onClose}) => {
                     <img src={product.meta.qrCode} alt='QR Code' className='w-1/3'/>
                 </div>
             </div>
-            <button
-                className={`w-full grid grid-cols-3 mt-5 text-lg border-1 border-b-gray-500 rounded-lg p-2`}
-                onClick={() => setReviewCollapsed(!reviewCollapsed)}>
-                <span>Reviews</span>
-                <div>Stars</div>
-                <i className={`bx justify-self-end text-2xl self-center mr-5 bx-chevron-${ reviewCollapsed ? 'right' : 'down'}`}></i>
-            </button>
-            <div className={`grid overflow-hidden transition duration-300 ${ 
-                reviewCollapsed ? 'grid-rows-[0] opacity-0' : 'grid-rows-[1fr] opacity-100'
-            }`}>
-                {/*<Reviews reviews={product.reviews}/>*/}
+            <div className='w-full mt-5 text-lg p-2'>
+                <div className='flex justify-center items-center gap-4'>
+                    <div>Rating:</div>
+                    <Stars stars={product.rating}/>
+                </div>
+            </div>
+
+            <div className='w-7/8 mx-auto'>
+                <Reviews reviews={product.reviews}/>
             </div>
         </div>
     );
