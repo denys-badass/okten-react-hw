@@ -1,5 +1,6 @@
 import {FC} from 'react';
-import {IDimensions} from "../../models/IProduct.ts";
+import {IDimensions} from "../../models/IDimensions.ts";
+
 
 type ProductInfoProp = {
     brand: string;

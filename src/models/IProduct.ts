@@ -1,23 +1,6 @@
-export interface IDimensions {
-  width: number;
-  height: number;
-  depth: number;
-}
-
-export interface IReviews {
-  rating: number;
-  comment: string;
-  date: string;
-  reviewerName: string;
-  reviewerEmail: string;
-}
-
-interface Meta {
-  createdAt: string;
-  updatedAt: string;
-  barcode: string;
-  qrCode: string;
-}
+import {IDimensions} from "./IDimensions.ts";
+import {IReviews} from "./IReviews.ts";
+import {IMeta} from "./IMeta.ts";
 
 export interface IProduct {
   id: number;
@@ -40,7 +23,7 @@ export interface IProduct {
   reviews: IReviews[];
   returnPolicy: string;
   minimumOrderQuantity: number;
-  meta: Meta;
+  meta: IMeta;
   images: string[];
   thumbnail: string;
 }

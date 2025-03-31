@@ -1,4 +1,5 @@
 import {FC} from 'react';
+import Star from "../star-component/Star.tsx";
 
 type StarsProp = {
     stars: number;
@@ -20,7 +21,7 @@ const Stars: FC<StarsProp> = ({stars}) => {
     return (
         <div className='flex justify-center items-center'>
             {
-                starsFill.map((star, index) => <i key={index} className={`bx text-yellow-400 ${star}`}></i>)
+                starsFill.map((star, index) => <Star key={index} className={star}/>)
             }
         </div>
     );

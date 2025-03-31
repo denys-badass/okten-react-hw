@@ -1,7 +1,7 @@
 import {FC} from 'react';
 import Review from "../review-component/Review.tsx";
 import './Reviews.css'
-import {IReviews} from "../../models/IProduct.ts";
+import {IReviews} from "../../models/IReviews.ts";
 
 type ReviewsProp = {
     reviews: IReviews[];

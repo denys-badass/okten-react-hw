@@ -1,10 +1,10 @@
 import {FC} from 'react';
-import {IReview} from "../../models/IReview.ts";
 import Stars from "../stars-component/Stars.tsx";
 import Avatar from "../avatar-component/Avatar.tsx";
+import {IReviews} from "../../models/IReviews.ts";
 
 type ReviewProp = {
-    review: IReview;
+    review: IReviews;
 }
 
 const Review: FC<ReviewProp> = ({review}) => {
