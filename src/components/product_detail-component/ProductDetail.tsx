@@ -39,7 +39,8 @@ const ProductDetail: FC<ProductDetailProp> = ({product, onClose}) => {
             <img src={thumbnail} alt={title} className='w-1/4 float-left my-8 mr-8'/>
             <div className='flex relative'>
                 <h2 className='text-4xl'>{title}</h2>
-                <button onClick={onClose} className='self-start ml-auto'><i className='bx bxs-x-square text-[40px]' ></i></button>
+                <button onClick={onClose} className='self-start ml-auto'><i className="fa-solid fa-square-xmark fa-2xl"></i>
+                </button>
             </div>
 
             <Tags tags={tags}/>

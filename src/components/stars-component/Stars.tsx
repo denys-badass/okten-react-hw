@@ -9,11 +9,11 @@ const Stars: FC<StarsProp> = ({stars}) => {
     const starsFill: string[] = [];
     for (let i = 0; i < 5; i++) {
         if (stars > 0.8) {
-            starsFill.push('bxs-star');
+            starsFill.push('fa-solid fa-star');
         } else if (stars > 0.2) {
-            starsFill.push('bxs-star-half')
+            starsFill.push('fa-solid fa-star-half-stroke')
         } else {
-            starsFill.push('bx-star')
+            starsFill.push('fa-regular fa-star')
         }
         stars--;
     }
