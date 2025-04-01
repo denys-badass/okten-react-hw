@@ -4,7 +4,7 @@ import {Outlet} from "react-router-dom";
 const ApiLayout = () => {
     return (
         <>
-            <nav>
+            <nav className='sticky inset-25 h-[75px] bg-sky-800'>
                 <SubMenu/>
             </nav>
             <main>

@@ -4,7 +4,7 @@ import Menu from "../components/menu/Menu.tsx";
 const MainLayout = () => {
     return (
         <>
-            <nav>
+            <nav className='sticky top-0 h-[100px] bg-sky-700'>
                 <Menu/>
             </nav>
             <main>
