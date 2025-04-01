@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
-import {ICommentPlaceholder} from "../../models/placeholder-models/ICommentPlaceholder.ts";
-import {PlaceholderService} from "../../api/placeholder.service.ts";
+import {ICommentPlaceholder} from "../../../models/placeholder-models/ICommentPlaceholder.ts";
+import {PlaceholderService} from "../../../api/placeholder.service.ts";
 import CommentPlaceholder from "../comment/CommentPlaceholder.tsx";
 
 const CommentsPlaceholder = () => {

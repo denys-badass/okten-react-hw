@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
-import {IUserPlaceholder} from "../../models/placeholder-models/IUserPlaceholder.ts";
-import {PlaceholderService} from "../../api/placeholder.service.ts";
+import {IUserPlaceholder} from "../../../models/placeholder-models/IUserPlaceholder.ts";
+import {PlaceholderService} from "../../../api/placeholder.service.ts";
 import UserPlaceholder from "../user/UserPlaceholder.tsx";
 
 

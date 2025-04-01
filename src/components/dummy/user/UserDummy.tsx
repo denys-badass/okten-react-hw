@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import {IUserDummy} from "../../models/dummy-models/IUserDummy.ts";
+import {IUserDummy} from "../../../models/dummy-models/IUserDummy.ts";
 
 type UserProp = {
     user: IUserDummy;

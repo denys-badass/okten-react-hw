@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {ICommentDummy} from "../../models/dummy-models/ICommentsDummy.ts";
+import {ICommentDummy} from "../../../models/dummy-models/ICommentsDummy.ts";
 
 type CommentProp = {
     comment: ICommentDummy;

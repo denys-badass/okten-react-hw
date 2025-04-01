@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
-import {ICommentDummy} from "../../models/dummy-models/ICommentsDummy.ts";
-import {DummyService} from "../../api/dummy.service.ts";
+import {ICommentDummy} from "../../../models/dummy-models/ICommentsDummy.ts";
+import {DummyService} from "../../../api/dummy.service.ts";
 import CommentDummy from "../comment/CommentDummy.tsx";
 
 const CommentsDummy = () => {

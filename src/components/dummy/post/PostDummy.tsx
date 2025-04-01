@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import {IPostDummy} from "../../models/dummy-models/IPostDummy.ts";
+import {IPostDummy} from "../../../models/dummy-models/IPostDummy.ts";
 
 type PostProp = {
     post: IPostDummy;

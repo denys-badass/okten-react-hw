@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import {IUserPlaceholder} from "../../models/placeholder-models/IUserPlaceholder.ts";
+import {IUserPlaceholder} from "../../../models/placeholder-models/IUserPlaceholder.ts";
 
 type UserProp = {
     user: IUserPlaceholder;

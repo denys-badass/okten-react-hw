@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import {IPostPlaceholder} from "../../models/placeholder-models/IPostPlaceholder.ts";
+import {IPostPlaceholder} from "../../../models/placeholder-models/IPostPlaceholder.ts";
 
 type PostProp = {
     post: IPostPlaceholder;

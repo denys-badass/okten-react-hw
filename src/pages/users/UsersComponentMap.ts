@@ -1,6 +1,6 @@
-import UsersPlaceholder from "../../components/users/UsersPlaceholder.tsx";
+import UsersPlaceholder from "../../components/placeholder/users/UsersPlaceholder.tsx";
 import * as React from "react";
-import UsersDummy from "../../components/users/UsersDummy.tsx";
+import UsersDummy from "../../components/dummy/users/UsersDummy.tsx";
 
 type UsersComponentType = {
     [key: string]: React.ComponentType;

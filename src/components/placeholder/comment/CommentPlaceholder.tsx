@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import {ICommentPlaceholder} from "../../models/placeholder-models/ICommentPlaceholder.ts";
+import {ICommentPlaceholder} from "../../../models/placeholder-models/ICommentPlaceholder.ts";
 
 type CommentProp = {
     comment: ICommentPlaceholder;

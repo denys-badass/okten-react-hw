@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
-import {IUserDummy} from "../../models/dummy-models/IUserDummy.ts";
-import {DummyService} from "../../api/dummy.service.ts";
+import {IUserDummy} from "../../../models/dummy-models/IUserDummy.ts";
+import {DummyService} from "../../../api/dummy.service.ts";
 import UserDummy from "../user/UserDummy.tsx";
 
 const UsersDummy = () => {
