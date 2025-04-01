@@ -1,18 +1,17 @@
 import {useLocation} from "react-router-dom";
-import {UserComponentMap} from "./UserComponentMap.ts";
+import {UsersComponentMap} from "./UsersComponentMap.ts";
 
 const UsersPage = () => {
     const {state} = useLocation();
     const componentKey: string = state.key;
 
-    const Component = UserComponentMap[componentKey];
+    const UsersComponent = UsersComponentMap[componentKey];
 
     return (
         <div>
             {
-                <Component />
+                <UsersComponent />
             }
-
         </div>
     );
 };
