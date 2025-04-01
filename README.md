@@ -67,3 +67,9 @@ export default tseslint.config({
 /comments/jsonplaceholder – відобразити всіх об’єктів з https://jsonplaceholder.typicode.com/comments
 
 /comments/dummyjson – відобразити всіх об’єктів з https://dummyjson.com/comments
+
+```js
+// .env
+VITE_PLACEHOLDER_API_BASE_URL='https://jsonplaceholder.typicode.com'
+VITE_DUMMY_API_BASE_URL='https://dummyjson.com'
+```
