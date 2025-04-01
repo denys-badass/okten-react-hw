@@ -5,21 +5,24 @@ import {IFetchedPosts} from "../models/dummy-models/fetched-models/IFetchedPosts
 import {ICommentDummy} from "../models/dummy-models/ICommentsDummy.ts";
 import {IFetchedComments} from "../models/dummy-models/fetched-models/IFetchedComments.ts";
 
-const baseUrl = import.meta.env.VITE_DUMMY_API_BASE_URL;
+const baseUrl = new URL(import.meta.env.VITE_DUMMY_API_BASE_URL);
 
 export const DummyService = {
     getUsers: async (): Promise<IUserDummy[]> => {
-        const endpoint = baseUrl + '/users';
+        const endpoint = new URL('users', baseUrl);
+        endpoint.searchParams.set('limit', '0');
         const fetchData: IFetchedUsers = await fetch(endpoint).then(res => res.json());
         return fetchData.users;
     },
     getPosts: async (): Promise<IPostDummy[]> => {
-        const endpoint = baseUrl + '/posts';
+        const endpoint = new URL('posts', baseUrl);
+        endpoint.searchParams.set('limit', '0');
         const fetchData: IFetchedPosts = await fetch(endpoint).then(res => res.json());
         return fetchData.posts;
     },
     getComments: async (): Promise<ICommentDummy[]> => {
-        const endpoint = baseUrl + '/comments';
+        const endpoint = new URL('comments', baseUrl);
+        endpoint.searchParams.set('limit', '0');
         const fetchData: IFetchedComments = await fetch(endpoint).then(res => res.json());
         return fetchData.comments;
     }
