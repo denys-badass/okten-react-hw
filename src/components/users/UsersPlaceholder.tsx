@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import {IUserPlaceholder} from "../../models/placeholder-models/IUserPlaceholder.ts";
-import UserComponent from "../user-component/UserComponent.tsx";
 import {PlaceholderService} from "../../api/placeholder.service.ts";
+import UserPlaceholder from "../user/UserPlaceholder.tsx";
 
 
 const UsersPlaceholder = () => {
@@ -16,7 +16,7 @@ const UsersPlaceholder = () => {
     return (
         <div>
             {
-                users.map(user => <UserComponent key={user.id} user={user}/>)
+                users.map(user => <UserPlaceholder key={user.id} user={user}/>)
             }
         </div>
     );

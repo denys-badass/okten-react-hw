@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {IUserDummy} from "../../models/dummy-models/IUserDummy.ts";
 import {DummyService} from "../../api/dummy.service.ts";
-import UserComponent from "../user-component/UserComponent.tsx";
+import UserDummy from "../user/UserDummy.tsx";
 
 const UsersDummy = () => {
     const [users, setUsers] = useState<IUserDummy[]>([]);
@@ -15,7 +15,7 @@ const UsersDummy = () => {
     return (
         <div>
             {
-                users.map(user => <UserComponent key={user.id} user={user}/>)
+                users.map(user => <UserDummy key={user.id} user={user}/>)
             }
         </div>
     );
