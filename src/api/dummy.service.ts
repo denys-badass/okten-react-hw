@@ -1,8 +1,7 @@
-import {endpoints} from "../constants/endpoints.ts";
 import {IUserDummy} from "../models/dummy-models/IUserDummy.ts";
 import {IFetchedUsers} from "../models/dummy-models/fetched-models/IFetchedUsers.ts";
 
-const baseUrl = endpoints.dummy;
+const baseUrl = import.meta.env.VITE_DUMMY_API_BASE_URL;
 
 export const DummyService = {
     getUsers: async (): Promise<IUserDummy[]> => {

@@ -1,7 +1,6 @@
-import {endpoints} from "../constants/endpoints.ts";
 import {IUserPlaceholder} from "../models/placeholder-models/IUserPlaceholder.ts";
 
-const baseUrl = endpoints.placeholder
+const baseUrl = import.meta.env.VITE_PLACEHOLDER_API_BASE_URL
 
 export const PlaceholderService = {
     getUsers: async (): Promise<IUserPlaceholder[]> => {
