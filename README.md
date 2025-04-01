@@ -52,18 +52,18 @@ export default tseslint.config({
   },
 })
 ```
-#qL0b5uh
+#Uyj2GjyDDF
 
 Побудувати меню, з можливістю переходу на наступні маршрути:
 
-/users/jsonplaceholder
+/users/jsonplaceholder – відобразити всіх об’єктів з  https://jsonplaceholder.typicode.com/users
 
-/users/dummyjson
+/users/dummyjson – відобразити всіх об’єктів з https://dummyjson.com/users
 
-/posts/jsonplaceholder
+/posts/jsonplaceholder- відобразити всіх об’єктів з  https://jsonplaceholder.typicode.com/posts
 
-/posts/dummyjson
+/posts/dummyjson – відобразити всіх об’єктів з https://dummyjson.com/posts
 
-/comments/jsonplaceholder
+/comments/jsonplaceholder – відобразити всіх об’єктів з https://jsonplaceholder.typicode.com/comments
 
-Контент на сторінках відсутній. Лише грамотна обробка роутів
+/comments/dummyjson – відобразити всіх об’єктів з https://dummyjson.com/comments
