@@ -1,11 +1,10 @@
 import {Link} from "react-router-dom";
-import {endpoints} from "../../constants/endpoints.ts";
 
 const SubMenu = () => {
     return (
         <ul>
-            <li><Link to={'jsonplaceholder'} state={endpoints.placeholder}>JSONPlaceholder</Link></li>
-            <li><Link to={'dummyjson'} state={endpoints.dummy}>DummyJSON</Link></li>
+            <li><Link to={'jsonplaceholder'} state={{key: 'placeholder'}}>JSONPlaceholder</Link></li>
+            <li><Link to={'dummyjson'} state={{key: 'dummy'}}>DummyJSON</Link></li>
         </ul>
     );
 };

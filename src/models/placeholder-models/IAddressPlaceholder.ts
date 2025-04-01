@@ -1,6 +1,6 @@
 import {IGeo} from "../IGeo.ts";
 
-export interface IAddressPH {
+export interface IAddressPlaceholder {
     street: string;
     suite: string;
     city: string;

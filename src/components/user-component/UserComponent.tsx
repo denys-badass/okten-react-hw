@@ -1,8 +1,9 @@
 import {FC} from 'react';
-import {IUserPH} from "../../models/ph-models/IUserPH.ts";
+import {IUserPlaceholder} from "../../models/placeholder-models/IUserPlaceholder.ts";
+import {IUserDummy} from "../../models/dummy-models/IUserDummy.ts";
 
 type UserProp = {
-    user: IUserPH;
+    user: IUserPlaceholder | IUserDummy;
 }
 
 const UserComponent: FC<UserProp> = ({user}) => {

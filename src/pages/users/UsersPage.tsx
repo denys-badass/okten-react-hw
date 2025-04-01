@@ -1,13 +1,18 @@
 import {useLocation} from "react-router-dom";
-import UsersComponent from "../../components/users-component/UsersComponent.tsx";
+import {UserComponentMap} from "./UserComponentMap.ts";
 
 const UsersPage = () => {
     const {state} = useLocation();
-    const baseUrl: string = state
+    const componentKey: string = state.key;
+
+    const Component = UserComponentMap[componentKey];
 
     return (
         <div>
-            <UsersComponent url={baseUrl}/>
+            {
+                <Component />
+            }
+
         </div>
     );
 };
