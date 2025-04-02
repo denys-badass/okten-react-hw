@@ -9,6 +9,10 @@ export const PlaceholderService = {
         const endpoint = new URL('users', baseUrl);
         return await fetch(endpoint).then(res => res.json());
     },
+    getUserById: async (userId: number): Promise<IUserPlaceholder> => {
+        const endpoint = new URL(`users/${userId}`, baseUrl);
+        return await fetch(endpoint).then(res => res.json());
+    },
     getPosts: async (): Promise<IPostPlaceholder[]> => {
         const endpoint = new URL('posts', baseUrl);
         return await fetch(endpoint).then(res => res.json());

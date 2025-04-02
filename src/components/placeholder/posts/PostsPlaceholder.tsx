@@ -13,7 +13,7 @@ const PostsPlaceholder = () => {
     }, []);
 
     return (
-        <div>
+        <div className='flex flex-col gap-5'>
             {
                 posts.map(post => <PostPlaceholder key={post.id} post={post}/>)
             }
