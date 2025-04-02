@@ -7,7 +7,7 @@ const ApiLayout = () => {
             <nav className='sticky inset-25 h-[75px] bg-sky-800'>
                 <SubMenu/>
             </nav>
-            <main>
+            <main className='p-8'>
                 <Outlet/>
             </main>
         </>

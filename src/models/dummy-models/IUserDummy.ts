@@ -1,7 +1,7 @@
 import {IAddressDummy} from "./IAddressDummy.ts";
 import {IHair} from "./IHair.ts";
 import {IBank} from "./IBank.ts";
-import {ICompany} from "./ICompany.ts";
+import {ICompanyDummy} from "./ICompanyDummy.ts";
 import {ICrypto} from "./ICrypto.ts";
 
 export interface IUserDummy {
@@ -27,7 +27,7 @@ export interface IUserDummy {
     macAddress: string;
     university: string;
     bank: IBank;
-    company: ICompany;
+    company: ICompanyDummy;
     ein: string;
     ssn: string;
     userAgent: string;

@@ -14,7 +14,7 @@ const UsersPlaceholder = () => {
     }, []);
 
     return (
-        <div>
+        <div className='grid grid-cols-4 gap-4'>
             {
                 users.map(user => <UserPlaceholder key={user.id} user={user}/>)
             }

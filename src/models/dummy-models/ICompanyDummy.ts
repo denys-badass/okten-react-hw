@@ -1,6 +1,6 @@
 import {IAddressDummy} from "./IAddressDummy.ts";
 
-export interface ICompany {
+export interface ICompanyDummy {
     department: string;
     name: string;
     title: string;
