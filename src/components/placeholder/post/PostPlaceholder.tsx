@@ -18,7 +18,7 @@ const PostPlaceholder: FC<PostProp> = ({post}) => {
         })
     }, [post.userId]);
 
-    const {id, title, body} = post
+    const {id, title, body} = post;
     return (
         <div className='border-2 border-sky-700 text-sky-950 rounded-2xl p-3 bg-gray-200'>
             <PostTitle postId={id} title={title} collapsed={collapsed} clickFn={() => setCollapsed(!collapsed)}/>
@@ -26,7 +26,7 @@ const PostPlaceholder: FC<PostProp> = ({post}) => {
             <div className={`grid ${collapsed ? 'grid-rows-[0] opacity-0 pointer-events-none' : 'grid-rows-[1fr] opacity-100'}`}>
                 <div>
                     <p className='my-5 ml-5 border-l-2 border-sky-600 pl-6'>{body}</p>
-                    <p>Posted by <span className='italic'>{user?.name}</span></p>
+                    <p>Posted by <span className='italic'>{user?.username}</span></p>
                 </div>
 
             </div>

@@ -13,7 +13,7 @@ const PostsDummy = () => {
     }, []);
 
     return (
-        <div>
+        <div className='flex flex-col gap-5'>
             {
                 posts.map(post => <PostDummy key={post.id} post={post}/>)
             }

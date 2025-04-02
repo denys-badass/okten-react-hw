@@ -14,6 +14,10 @@ export const DummyService = {
         const fetchData: IFetchedUsers = await fetch(endpoint).then(res => res.json());
         return fetchData.users;
     },
+    getUserById: async (userId: number): Promise<IUserDummy> => {
+        const endpoint = new URL(`users/${userId}`, baseUrl);
+        return await fetch(endpoint).then(res => res.json());
+    },
     getPosts: async (): Promise<IPostDummy[]> => {
         const endpoint = new URL('posts', baseUrl);
         endpoint.searchParams.set('limit', '0');
