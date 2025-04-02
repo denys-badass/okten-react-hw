@@ -13,7 +13,7 @@ const CommentsPlaceholder = () => {
     }, []);
 
     return (
-        <div>
+        <div className='grid grid-cols-4 gap-4'>
             {
                 comments.map(comment => <CommentPlaceholder key={comment.id} comment={comment}/>)
             }

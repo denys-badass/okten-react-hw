@@ -7,6 +7,6 @@ type CommentsComponentType = {
 }
 
 export const CommentsComponentMap: CommentsComponentType = {
-    placeholder: CommentsPlaceholder,
-    dummy: CommentsDummy
+    jsonplaceholder: CommentsPlaceholder,
+    dummyjson: CommentsDummy
 }

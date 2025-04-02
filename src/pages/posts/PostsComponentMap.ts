@@ -7,6 +7,6 @@ type PostsComponentType = {
 }
 
 export const PostsComponentMap: PostsComponentType = {
-    placeholder: PostsPlaceholder,
-    dummy: PostsDummy
+    jsonplaceholder: PostsPlaceholder,
+    dummyjson: PostsDummy
 }

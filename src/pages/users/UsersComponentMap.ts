@@ -7,6 +7,6 @@ type UsersComponentType = {
 }
 
 export const UsersComponentMap: UsersComponentType = {
-    'placeholder': UsersPlaceholder,
-    'dummy': UsersDummy,
+    jsonplaceholder: UsersPlaceholder,
+    dummyjson: UsersDummy,
 }

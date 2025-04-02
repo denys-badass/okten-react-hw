@@ -1,9 +1,9 @@
-import {useLocation} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import {PostsComponentMap} from "./PostsComponentMap.ts";
 
 const PostsPage = () => {
-    const {state} = useLocation();
-    const componentKey = state.key;
+    const {service} = useParams();
+    const componentKey: string = service || '';
 
     const PostsComponent = PostsComponentMap[componentKey];
 
