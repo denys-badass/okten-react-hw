@@ -12,7 +12,7 @@ const User: FC<UserProp> = ({user}) => {
     return (
         <div className='flex items-center gap-3'>
             <Avatar firstName={firstName} lastName={lastName}/>
-            <Link to={'cart/'+ id} className='text-xl'>{firstName} {lastName}</Link>
+            <Link to={`user/${id}/carts`} className='text-xl'>{firstName} {lastName}</Link>
 
         </div>
     );
