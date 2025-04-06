@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 
 const Menu = () => {
     return (
-        <ul>
+        <ul className='flex text-slate-600 text-lg'>
             <li><Link to={'/users'}>Users</Link></li>
         </ul>
     );

@@ -2,6 +2,7 @@ import {useSearchParams} from "react-router-dom";
 import {FC, useEffect, useState} from "react";
 import {IUser} from "../../models/IUser.ts";
 import {APIService} from "../../api/api.service.ts";
+import User from "../user/User.tsx";
 
 type TotalUsersProp = {
     setTotalFn: (users: number) => void;
@@ -18,12 +19,12 @@ const Users: FC<TotalUsersProp> = ({setTotalFn, perPage}) => {
             setUsers(data.users);
             setTotalFn(data.total);
         })
-    }, [page, setTotalFn]);
+    }, [page, setTotalFn, perPage]);
 
     return (
-        <div>
+        <div className='w-2/3 m-auto grid grid-cols-3 gap-6 grid-rows-auto py-6'>
             {
-                users.map(user => <div key={user.id}>{user.firstName} {user.lastName}</div>)
+                users.map(user => <User key={user.id} user={user}/>)
             }
         </div>
     );
