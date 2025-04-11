@@ -6,9 +6,12 @@ type CarProp = {
 }
 
 const Car: FC<CarProp> = ({car}) => {
+    const {brand, price, year} = car;
     return (
-        <div>
-            {JSON.stringify(car)}
+        <div className='border-1 border-slate-500'>
+            <h3 className='text-2xl font-bold'>{brand}</h3>
+            <p>{year} year</p>
+            <p>${price}</p>
         </div>
     );
 };
