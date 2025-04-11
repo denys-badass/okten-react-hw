@@ -5,7 +5,7 @@ const Menu = () => {
         <>
             <h2>Cars</h2>
             <ul>
-                <li><Link to='cars'>Show</Link></li>
+                <li><Link to='/cars'>Show</Link></li>
             </ul>
         </>
     );
