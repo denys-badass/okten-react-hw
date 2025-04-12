@@ -12,7 +12,7 @@ const Cars = () => {
         })
     }, []);
     return (
-        <div>
+        <div className='w-3/4 mx-auto grid grid-cols-4 py-10'>
             {
                 cars.map(car => <Car key={car.id} car={car}/>)
             }

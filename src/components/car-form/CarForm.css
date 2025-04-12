@@ -1,0 +1,28 @@
+input {
+    border: 2px oklch(58.8% 0.158 241.966) solid;
+    height: 50px;
+    padding: 0 10px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.input-wrap {
+    position: relative;
+}
+
+.label {
+    position: absolute;
+    top: -8px;
+    left: 18px;
+    background-color: oklch(96.8% 0.007 247.896);
+    padding: 0 6px;
+    font-size: 12px;
+    color: oklch(58.8% 0.158 241.966);
+}
+
+button {
+    border-radius: 10px;
+    background-color: oklch(58.8% 0.158 241.966);
+    height: 50px;
+    color: oklch(96.8% 0.007 247.896);
+}
