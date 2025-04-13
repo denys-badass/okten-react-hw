@@ -23,7 +23,7 @@ const CarForm = () => {
     return (
         <form className='flex flex-col gap-6' onSubmit={handleSubmit(submitHandler)}>
             <div className='input-wrap'>
-                <input className={`${errors.brand && 'not-valid-input'}`} type="text" {...register('brand', {
+                <input className={`${errors.brand && 'not-valid'}`} type="text" {...register('brand', {
                     required: {value: true, message: 'Cant be empty'},
                     pattern: {value: /^[a-zA-Zа-яА-яёЁіІїЇєЄҐґ]{1,20}$/, message: 'Wrong brand name'}
                 })}/>
@@ -31,7 +31,7 @@ const CarForm = () => {
 
             </div>
             <div className='input-wrap'>
-                <input className={`${errors.year && 'not-valid-input'}`} type="text" {...register('year', {
+                <input className={`${errors.year && 'not-valid'}`} type="text" {...register('year', {
                     required: {value: true, message: 'Cant be empty'},
                     min: {value: 1990, message: 'Year cant be less than 1990'},
                     max: {value: 2025, message: 'Year cant be more than 2025'}
@@ -39,7 +39,7 @@ const CarForm = () => {
                 {errors.year ? <div className={'label not-valid'}>{errors.year.message}</div>: <div className={'label'}>Year</div>}
             </div>
             <div className='input-wrap'>
-                <input className={`${errors.price && 'not-valid-input'}`} type="text" {...register('price', {
+                <input className={`${errors.price && 'not-valid'}`} type="text" {...register('price', {
                     required: {value: true, message: 'Cant be empty'},
                     min: {value: 0, message: 'Year cant be less than 0'},
                     max: {value: 1_000_000, message: 'Year cant be more than 1 000 000'}

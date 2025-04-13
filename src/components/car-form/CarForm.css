@@ -22,9 +22,6 @@ input {
 
 .not-valid {
     color: oklch(58.6% 0.253 17.585);
-}
-
-.not-valid-input {
     border-color: oklch(58.6% 0.253 17.585);
 }
 
