@@ -1,5 +1,8 @@
 import {useForm} from "react-hook-form";
 import './CarForm.css'
+import {carValidator} from "../../validators/car.validator.ts";
+import {joiResolver} from "@hookform/resolvers/joi";
+import {carsService} from "../../api/cars.service.ts";
 
 type FormProps = {
     brand: string;
@@ -13,40 +16,30 @@ const CarForm = () => {
         register,
         formState: {errors, isValid}
     } = useForm<FormProps>({
-        mode: "onBlur"
+        mode: "onBlur",
+        resolver: joiResolver(carValidator)
     });
 
     const submitHandler = (formData: FormProps) => {
-        console.log(formData);
+        carsService.postCar(formData).then(car => {
+            console.log(car);
+        });
     }
 
     return (
         <form className='flex flex-col gap-6' onSubmit={handleSubmit(submitHandler)}>
             <div className='input-wrap'>
-                <input className={`${errors.brand && 'not-valid'}`} type="text" {...register('brand', {
-                    required: {value: true, message: 'Cant be empty'},
-                    pattern: {value: /^[a-zA-Zа-яА-яёЁіІїЇєЄҐґ]{1,20}$/, message: 'Wrong brand name'}
-                })}/>
+                <input className={`${errors.brand && 'not-valid'}`} type="text" {...register('brand')}/>
                 {errors.brand ? <div className={'label not-valid'}>{errors.brand.message}</div>: <div className={'label'}>Brand</div>}
-
             </div>
             <div className='input-wrap'>
-                <input className={`${errors.year && 'not-valid'}`} type="text" {...register('year', {
-                    required: {value: true, message: 'Cant be empty'},
-                    min: {value: 1990, message: 'Year cant be less than 1990'},
-                    max: {value: 2025, message: 'Year cant be more than 2025'}
-                })}/>
+                <input className={`${errors.year && 'not-valid'}`} type="text" {...register('year')}/>
                 {errors.year ? <div className={'label not-valid'}>{errors.year.message}</div>: <div className={'label'}>Year</div>}
             </div>
             <div className='input-wrap'>
-                <input className={`${errors.price && 'not-valid'}`} type="text" {...register('price', {
-                    required: {value: true, message: 'Cant be empty'},
-                    min: {value: 0, message: 'Year cant be less than 0'},
-                    max: {value: 1_000_000, message: 'Year cant be more than 1 000 000'}
-                })}/>
+                <input className={`${errors.price && 'not-valid'}`} type="text" {...register('price')}/>
                 {errors.price ? <div className={'label not-valid'}>{errors.price.message}</div>: <div className={'label'}>Price</div>}
             </div>
-
             <button disabled={!isValid}>Add Car</button>
         </form>
     );
