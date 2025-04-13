@@ -20,9 +20,21 @@ input {
     color: oklch(58.8% 0.158 241.966);
 }
 
+.not-valid {
+    color: oklch(58.6% 0.253 17.585);
+}
+
+.not-valid-input {
+    border-color: oklch(58.6% 0.253 17.585);
+}
+
 button {
     border-radius: 10px;
     background-color: oklch(58.8% 0.158 241.966);
     height: 50px;
     color: oklch(96.8% 0.007 247.896);
+}
+
+button:disabled {
+    background-color: oklch(70.7% 0.022 261.325);
 }
