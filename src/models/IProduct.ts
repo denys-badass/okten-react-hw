@@ -19,6 +19,7 @@ interface Meta {
   qrCode: string;
 }
 
+// Model for represent product from API
 export interface IProduct {
   id: number;
   title: string;
