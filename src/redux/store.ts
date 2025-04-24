@@ -1,9 +1,10 @@
 import {configureStore} from "@reduxjs/toolkit";
+import {userSlice} from "./slices/userSlice.ts";
 
 export const store = configureStore({
     reducer: {
-        UserStoreSlice: UserSlice.reducer,
-        PostStoreSlice: PostSlice.reducer,
-        CommentStoreSlice: CommentSlice.reducer,
+        userStore: userSlice.reducer,
+        // postStore: postSlice.reducer,
+        // commentStore: commentSlice.reducer,
     }
 })
