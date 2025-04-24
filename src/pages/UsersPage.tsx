@@ -1,21 +1,9 @@
-import {useAppSelector} from "../redux/hooks/useAppSelector.tsx";
-import {useEffect} from "react";
-import {userActions} from "../redux/slices/userSlice.ts";
-import {useAppDispatch} from "../redux/hooks/useAppDispatch.tsx";
+import {Users} from "../components/users/Users.tsx";
 
 const UsersPage = () => {
-    const {users} = useAppSelector(state => state.userStore);
-    const dispatch = useAppDispatch();
-
-    useEffect(() => {
-        dispatch(userActions.loadUsers());
-    }, [users]);
-
     return (
-        <div>
-            {
-                users.map(user => <div key={user.id}>{user.name}</div>)
-            }
+        <div className='w-3/5 mx-auto'>
+            <Users/>
         </div>
     );
 };
