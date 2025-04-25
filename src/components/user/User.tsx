@@ -3,6 +3,7 @@ import {IUser} from "../../models/IUser.ts";
 
 type UserProp = {
     user: IUser;
+    isComplex?: boolean;
 }
 
 export const User: FC<UserProp> = ({user}) => {

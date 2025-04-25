@@ -5,5 +5,5 @@ export const postService = {
     getAllPosts: async (): Promise<IPost[]> => {
         const response = await axiosInstance.get<IPost[]>('/posts');
         return response.data;
-    }
+    },
 }

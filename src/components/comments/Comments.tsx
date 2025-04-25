@@ -9,8 +9,8 @@ export const Comments = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(commentActions.loadComments());
-    }, [dispatch]);
+        if (comments.length === 0) dispatch(commentActions.loadComments());
+    }, [dispatch, comments.length]);
 
     return (
         <div className='flex flex-col gap-6'>

@@ -9,12 +9,12 @@ export const Users = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(userActions.loadUsers());
-    }, [users, dispatch]);
+        if (users.length === 0) dispatch(userActions.loadUsers());
+    }, [dispatch, users.length]);
 
     return (
-        <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6'>
+        <>
             {users.map((user) => <User key={user.id} user={user} />)}
-        </div>
+        </>
     );
 };

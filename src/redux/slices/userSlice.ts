@@ -2,7 +2,6 @@ import {IUser} from "../../models/IUser.ts";
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {userServices} from "../../api/user.services.ts";
 
-
 type UserSliceType = {
     users: IUser[];
 }
@@ -37,5 +36,6 @@ export const userSlice = createSlice({
 })
 
 export const userActions = {
-    ...userSlice.actions, loadUsers
+    ...userSlice.actions,
+    loadUsers,
 }

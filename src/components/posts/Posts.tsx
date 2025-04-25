@@ -9,8 +9,8 @@ export const Posts = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(postActions.loadPosts());
-    }, [posts, dispatch]);
+        if (posts.length === 0) dispatch(postActions.loadPosts());
+    }, [dispatch, posts.length]);
 
     return (
         <div className='flex flex-col gap-6'>
