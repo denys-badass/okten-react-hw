@@ -13,7 +13,7 @@ export const Comments = () => {
     }, [dispatch]);
 
     return (
-        <div>
+        <div className='flex flex-col gap-6'>
             {comments.map(comment => <Comment key={comment.id} comment={comment} />)}
         </div>
     );
