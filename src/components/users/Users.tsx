@@ -13,7 +13,7 @@ export const Users = () => {
     }, [users, dispatch]);
 
     return (
-        <div className='grid grid-cols-4 gap-6'>
+        <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6'>
             {users.map((user) => <User key={user.id} user={user} />)}
         </div>
     );

@@ -2,6 +2,7 @@ import {useAppSelector} from "../../redux/hooks/useAppSelector.tsx";
 import {useAppDispatch} from "../../redux/hooks/useAppDispatch.tsx";
 import {useEffect} from "react";
 import {postActions} from "../../redux/slices/postSlice.ts";
+import {Post} from "../post/Post.tsx";
 
 export const Posts = () => {
     const {posts} = useAppSelector((state) => state.postStore);
@@ -12,8 +13,8 @@ export const Posts = () => {
     }, [posts, dispatch]);
 
     return (
-        <>
-            {posts.map(post => <div key={post.id}>{post.title}</div>)}
-        </>
+        <div className='flex flex-col gap-6'>
+            {posts.map(post => <Post key={post.id} post={post} />)}
+        </div>
     );
 };
