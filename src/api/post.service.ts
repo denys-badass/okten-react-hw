@@ -6,4 +6,8 @@ export const postService = {
         const response = await axiosInstance.get<IPost[]>('/posts');
         return response.data;
     },
+    getPostsByUserId: async (userId: number): Promise<IPost[]> => {
+        const response = await axiosInstance.get<IPost[]>('/posts?userId=' + userId);
+        return response.data;
+    }
 }
